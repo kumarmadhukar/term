@@ -9,7 +9,7 @@ UW=$2
    #echo cbmc  --$BIT_WIDTH --unwind $UW -D __VERIFIER_assert=orignial__VERIFIER_assert -D __assert_fail=original__assert_fail  --no-built-in-assertions --stop-on-fail --object-bits 16 --string-abstraction $INFILE --trace --trace-show-function-calls --z3
    #cbmc  --$BIT_WIDTH --unwind $UW -D __VERIFIER_assert=orignial__VERIFIER_assert -D __assert_fail=original__assert_fail  --no-built-in-assertions --stop-on-fail --object-bits 16 --string-abstraction $INFILE --compact-trace --trace-show-function-calls --z3
    echo cbmc  --$BIT_WIDTH --unwind $UW -D __VERIFIER_assert=orignial__VERIFIER_assert -D __assert_fail=original__assert_fail  --no-built-in-assertions --stop-on-fail --object-bits 16 $INFILE --trace --trace-show-function-calls --z3
-   cbmc  --$BIT_WIDTH --unwind $UW -D __VERIFIER_assert=orignial__VERIFIER_assert -D __assert_fail=original__assert_fail  --no-built-in-assertions --stop-on-fail --object-bits 16 $INFILE --compact-trace --trace-show-function-calls --z3
+   cbmc  --$BIT_WIDTH --unwind $UW -D __VERIFIER_assert=orignial__VERIFIER_assert -D __assert_fail=original__assert_fail  --no-standard-checks  --no-built-in-assertions --stop-on-fail --object-bits 16 $INFILE --compact-trace --trace-show-function-calls --z3
    EV=$?
    if [ $EV -eq 10 ]
    then

@@ -8,7 +8,7 @@ EXCO=0
 RESTXT="DEFAULT"
 
 echo  "
-* *                 CBMC 5.95.0 (n/a) 64-bit                * *
+* *                 CBMC 6.5.0 (n/a) 64-bit                * *
 * *                 Copyright (C) 2001-2018                 * *
 * *              Daniel Kroening, Edmund Clarke             * *
 * * Carnegie Mellon University, Computer Science Department * *
@@ -26,7 +26,16 @@ fi
 numbers=(2 3 4 10 12 20 40 100 1000)
 
 # Total allowed time for glucose in seconds
-max_time=210
+max_time=225
+LOC=`wc -l $2 | cut -d " " -f 1`
+# for bigger files, do not run SAT solver; directly start with SMT solver
+if [ $LOC -gt 3000 ];
+then
+   #max_time=225
+   max_time=0
+else
+   max_time=225
+fi
 
 # Initialize the timer
 start_time=$(date +%s)
@@ -51,6 +60,20 @@ run_gl() {
     return $gl_status
 }
 
+run_ki() {
+    echo "RUNNING KISSAT for unwind $2"
+    (timeout "$3" run-kissat-uw.sh $1 "$2") >& $1.err
+    ki_status=$?
+    if [ $ki_status -eq 10 ]
+    then
+        RESTXT="FALSE(termination)"
+        exit 1
+    fi
+
+    return $ki_status
+}
+
+
 run_z3 () {
     echo "RUNNING Z3 for unwind $2"
     (run-z3-uw.sh $1 "$2") >& $1.err
@@ -63,12 +86,13 @@ run_z3 () {
     fi
 
     if [ $z3_status -eq 6 ] || [ $z3_status -eq 137 ]; then
-        echo "Z3 error or OUT OF MEM on unwind $num."
+        echo "Z3 EXITCODE=$z3_status on unwind $num."
         exit $z3_status # Resource error
     fi
 
     return $z3_status
 }
+
 
 # Iterate through the numbers
 for num in "${numbers[@]}"; do
