@@ -12,14 +12,17 @@ This archive contains the following files:
 
 - bounty.sh: this wrapper script invokes bracer, instrumenter, and cbmc parsing the property file to pass the correct flags to cbmc and returning the correct return codes for SV-COMP.
 
-- bounty-noinstr.sh: a shell script that all glues all the above, except bracer and instrumenter
+- bounty-noinstr: a shell script that all glues all the above, except bracer and instrumenter
+
+- all other .sh files: these scripts are used internally within bounty.sh and bounty-noinstr
 
 - termination.prp: SV-COMP's termination property file.
 
+- docs/ : this folder contains xlsheets with sv-comp file-wise experimentation evaluation data, manually instrumented sv-comp experimentation data for those benchmarks that contain features yet unsupported by our instrumenter, and PAR-2 score related data. The file names are self-explanatory.
 
 DEPENDENCIES
 ============
-The binaries were compiled on Ubuntu 22.04 LTS; the binaries
+The binaries were compiled on Ubuntu 24.04 LTS; the binaries
 should be self-hosting on similar operating systems, if the
 following package dependencies are satisfied:-
    - gcc
@@ -31,11 +34,11 @@ following package dependencies are satisfied:-
 
 If the tool still does not run, please contact us.
 
-Note:- please ensure that clang-14 and g++-12 are the "default" compilers on UBUNTU 22.04. Otherwise, the tool-chain may not work.
+Note:- please ensure that clang-14 and g++-12 are the "default" compilers. Otherwise, the tool-chain may not work.
 
 
-Usage
-=====
+To run BOUNTY along with instrumentation for recurrent states
+=============================================================
 bounty.sh is the main script you should be using. Feel free to customize it as suits your need. And, would you mind sharing your bounty updates with us?
 
 bounty.sh takes the following options:
@@ -50,3 +53,10 @@ A sample command to run bounty is :-
 Note:-
 - even though bounty supports only termination property at the moment, it may be extended to more properties in future, and hence takes property file also as an input.
 - bounty-noinstr.sh is not nicely done, and will be removed soon. Instead, bounty.sh will be re-implemented in a language like C++ with better option control and, hopefully, better strategies.  
+
+
+To run BOUNTY without instrumentation for recurrent states
+==========================================================
+Then you first need to instrument (manually, or otherwise) the source file for recurrent states. For example, see the folder "svcomp-manually-instrumented". This contains a bunch of sv-comp benchmarks which we manually instrumented as they contain features unsupported by our current instrumenter.
+
+Once you have the instrumented source files, run bounty-noinstr on them exactly the same way you would have run bounty.sh as mentioned above.
