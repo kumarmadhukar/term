@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+#
+#
+#  WTINESS: CONVERTION OF CBMC TRACE INTO GRAPHML
+#  Copyright (C) 2023-2042 TATA Consultancy Services Ltd. Ravindra Metta <r.metta@tcs.com>
+#
+#
 
 import os,shutil,subprocess,re
 import sys
