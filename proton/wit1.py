@@ -1,8 +1,13 @@
+
+"""
+PROTON
+(C) 2022-2042, Kumar Madhukar
+Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+"""
+
 import sys
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-
-
 
 
 def parse_trace_file(trace_file_path):
