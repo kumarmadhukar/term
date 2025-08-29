@@ -1,6 +1,13 @@
 #!/bin/bash
 # tool
 
+#
+# PROTON
+# (C) 2022-2042, Kumar Madhukar
+# Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+#
+
+
 PROTON_T_CHECK=./t-check.sh
 PROTON_NT_CHECK=./nt-check.sh
 PROTON_BRACER=./bracer
