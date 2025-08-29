@@ -1,4 +1,10 @@
 """
+PROTON
+(C) 2022-2042, Kumar Madhukar
+Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+"""
+
+"""
 Validates variant, invariant using testing
 """
 # TODO is the ranking function > 0 check in place
