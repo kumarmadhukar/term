@@ -1,3 +1,10 @@
+
+"""
+PROTON
+(C) 2022-2042, Kumar Madhukar
+Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+"""
+
 lib_prompt_refinement_level_1_1 = (
     "In order to prove the termination of a loop, we use the notion of loop variant. A loop variant "
     "is not a property but a value. It is an expression that involves the variables modified by the "
