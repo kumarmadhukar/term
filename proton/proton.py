@@ -1,3 +1,9 @@
+#
+# PROTON
+# (C) 2022-2042, Kumar Madhukar
+# Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+#
+
 # This file is part of BenchExec, a framework for reliable benchmarking:
 # https://github.com/sosy-lab/benchexec
 #
