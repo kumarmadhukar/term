@@ -1,3 +1,9 @@
+"""
+PROTON
+(C) 2022-2042, Kumar Madhukar
+Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+"""
+
 """ Config """
 import os
 from os import path
