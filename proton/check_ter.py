@@ -2,6 +2,11 @@
 Given a program, check and return term, non-term or unk
 """
 
+"""
+PROTON
+(C) 2022-2042, Kumar Madhukar
+Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+"""
 
 import os
 import os.path
