@@ -1,6 +1,13 @@
 #!/bin/bash
 # tool
 
+#
+# PROTON
+# (C) 2022-2042, Kumar Madhukar
+# Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+#
+
+
 # A script wrapping around the term check python script to interface better with
 # rest of proton
 
