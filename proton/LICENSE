@@ -13,7 +13,7 @@ PROTON consists of the following tools:-
 
 
 Of the above, 1 , 2, and 7 are our contributions, and we use MIT license for them just like CBMC.
- Item 6, WITNESS, is developed by TATA Consultancy Services, is also bound by MIT License and is a part of this repository.
+ Item 6, WITNESS, developed by TATA Consultancy Services, is also bound by MIT License and is a part of this repository.
 
 CBMC, Z3 and Glucose are bound by their respective licenses found on their respective repository site, which we have replicated in this repository.
 
