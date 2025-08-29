@@ -1,6 +1,13 @@
 #!/bin/bash
 # tool
 
+#
+# PROTON
+# (C) 2022-2042, Kumar Madhukar
+# Department of Computer Science and Engineering, Indian Institute of Technology Delhi
+#
+
+
 # TODO --- get the architecture from the command line
 
 numFor=`grep '\<for\>.*(.*<' $1 | wc -l`
