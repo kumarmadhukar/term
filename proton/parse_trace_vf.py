@@ -2,8 +2,10 @@
 #
 #
 #  WTINESS: CONVERTION OF CBMC TRACE INTO GRAPHML
-#  Copyright (C) 2023-2042 TATA Consultancy Services Ltd. Ravindra Metta <r.metta@tcs.com>
+#  Author: Ravindra Metta
+#  Copyright (C) 2023-2025 TATA Consultancy Services Ltd.
 #
+#  Licensed under the MIT License
 #
 
 import os,shutil,subprocess,re
